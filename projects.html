@@ -1,0 +1,117 @@
+<html>
+
+<head>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
+    <style>
+        .about-us-header {
+            background: url('images/bg-project.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 120px 0;
+        }
+
+        .about-us-header h1 {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .recent-projects {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .image-grid img {
+            width: 400px;
+            /* Set the width of the image */
+            height: 200px;
+            /* Set the height of the image */
+            object-fit: cover;
+            /* Maintain aspect ratio and cover the specified dimensions */
+            display: block;
+            /* Ensures there is no bottom space under the image */
+        }
+
+
+        /* Style for the button */
+        .view-all-btn {
+            padding: 10px 20px;
+            background-color: #ffc107;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-all-btn:hover {
+            background-color: #e0a800;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div class="about-us-header">
+        <h1>Projects</h1>
+    </div>
+    <section class="recent-projects">
+        <div class="image-grid">
+            <img src="images/lol.jpg" alt="Project 1">
+            <img src="images/IMG-20241029-WA0035.jpg" alt="Project 2">
+            <img src="images/loll.jpg" alt="Project 3">
+            <img src="images/IMG-20241029-WA0015.jpg" alt="Project 4">
+            <img src="images/IMG-20241029-WA0019.jpg" alt="Project 5">
+            <img src="images/lolll.jpg" alt="Project 6">
+            <img src="images/IMG-20241031-WA0041.jpg" alt="Project 7">
+            <img src="images/IMG-20241031-WA0042.jpg" alt="Project 8">
+            <img src="images/IMG-20241031-WA0043.jpg" alt="Project 9">
+            <img src="images/IMG-20241031-WA0044.jpg" alt="Project 10">
+            <img src="images/IMG-20241031-WA0045.jpg" alt="Project 11">
+            <img src="images/IMG-20241031-WA0046.jpg" alt="Project 12">
+            <img src="images/IMG-20241031-WA0047.jpg" alt="Project 13">
+            <img src="images/IMG-20241031-WA0048.jpg" alt="Project 14">
+            <img src="images/IMG-20241031-WA0049.jpg" alt="Project 15">
+            <img src="images/IMG-20241031-WA0050.jpg" alt="Project 16">
+            <img src="images/51.jpg" alt="Project 17">
+            <img src="images/52.jpg" alt="Project 18">
+        </div>
+    </section>
+    <div id="footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+        // Function to load HTML content
+        function loadContent(elementId, file) {
+            fetch(file)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading file:', error));
+        }
+
+        // Load all the required files
+        loadContent('navbar', 'navbar.html');
+        loadContent('footer', 'footer.html');
+</script>
+
+
+</body>
+
+</html>

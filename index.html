@@ -1,0 +1,196 @@
+<html>
+
+<head>
+    <title>Construction Company Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .hero-section {
+            background: url('images/WhatsApp Image 2024-10-29 at 18.26.00_1c7ed15d.jpg') no-repeat center center;
+            /* Update the URL to your image */
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 150px 0;
+        }
+
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-section .btn {
+            background-color: #ffc107;
+            color: black;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+        }
+
+        .services-section {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .services-section h2 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .services-section p {
+            font-size: 18px;
+            color: #6c757d;
+            margin-bottom: 40px;
+        }
+
+        .service-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-box i {
+            font-size: 80px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .service-box h4 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .service-box p {
+            font-size: 16px;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+
+        .service-box .btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .service-box .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .view-all-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-top: 40px;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-all-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .content {
+            padding: 50px;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .underline {
+            width: 50px;
+            height: 3px;
+            background-color: #ffc107;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 16px;
+            color: #6c757d;
+        }
+
+        .image {
+            max-width: 100%;
+            height: auto;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div id="hero"></div>
+    <div id="anjay"></div>
+    <div id="recent-projects"></div>
+    <div id="services"></div>
+    <div id="footer"></div>
+
+    <script>
+        async function loadContent(elementId, file) {
+            try {
+                const response = await fetch(file);
+                if (!response.ok) throw new Error('Network response was not ok');
+                const data = await response.text();
+                document.getElementById(elementId).innerHTML = data;
+            } catch (error) {
+                console.error('Error loading file:', error);
+            }
+        }
+
+        // Load content and wait for navbar to load before bootstrap script
+        Promise.all([
+            loadContent('navbar', 'navbar.html'),
+            loadContent('hero', 'hero.html'),
+            loadContent('anjay', 'anjay.html'),
+            loadContent('recent-projects', 'recent-projects.html'),
+            loadContent('services', 'services.html'),
+            loadContent('footer', 'footer.html')
+        ]).then(() => {
+            // Bootstrap bundle script loaded after content is rendered
+            const script = document.createElement('script');
+            script.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js";
+            document.body.appendChild(script);
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz4fnFO9gybMkKmC5v5Jl8A65IOp4D3B8AezE3SzzjxvHk0FtdnNlM2/cN" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-4U8OqbtNcILxCHg9/y/0c4xA0h7RW72z9nIw+WgCD0ZZ1dnbS+Og2wL6tPxfE8/3"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
